@@ -1,12 +1,28 @@
-#Division of the 2 numbers with "error" message if div by 0
+#1.Деление двух цифр (первую на вторую). Выдает ошибку ("стремится к бесконечности") при попытке деления на ноль. Была так же идея вписать return(2**64)
+
 def division (a,b):
     if b != 0:
         return (a/b)
     else:
         return ('стремится к бесконечности')
-#User name function
+        
+print(division (1,10))
+print(division (1,0))        
+#print ('{:.2f}'.format(division (1,3))) 
+
+
+
+#2.Выводит данные о пользователе предложением
+
 def userInfo (name, surname, DOB, city, email, phone):
     print ('Пользователь {} {} родился {} в городе {}. Его емейл: {}, его номер телефона: {}'.format(name, surname, DOB, city, email, phone))
+    
+userInfo('Максим','Кузнецов','25.06.1997','Львов','maksym.v.kuznetsov@gmail.com', '+380637290711')
+
+
+
+
+#3.Функция запрашивает 3 числа, возвращает сумму двух бОльших
 
 def returnTwoBigger (a,b,c):
     min = a
@@ -15,13 +31,13 @@ def returnTwoBigger (a,b,c):
     elif c<min:
         min =c
     return(a+b+c-min)
-
-#Возведение целого числа в целую отрицательную степень двумя способами
-print(division (1,10))
-print(division (1,0))
-#print ('{:.2f}'.format(division (1,)))
-userInfo('Максим','Кузнецов','25.06.1997','Львов','maksym.v.kuznetsov@gmail.com', '+380637290711')
+    
 print(returnTwoBigger(1,2,3))
+
+
+
+
+#4.Возведение целого числа в целую отрицательную степень двумя способами
 
 def toThePowerOf_type1 (x,y):
     if y>=0:
@@ -40,9 +56,13 @@ def toThePowerOf_type2 (x,y):
 print(toThePowerOf_type1 (2,-3))
 print(toThePowerOf_type2 (2,-3))
 
-#Вводим числа через пробел. Программа выводит их сумму и снова запрашивает числа через пробел - они будут добавлены к уже имеющейся сумме. 
+
+
+
+#5.Вводим числа через пробел. Программа выводит их сумму и снова запрашивает числа через пробел - они будут добавлены к уже имеющейся сумме. 
 #Чтоб остановится - нужно ввести "s" (так же через пробел
 #Реализация через рекурсию
+
 def sumation(sum=0):
     numbers = input('Put numbers over spaces. To stop the programm - type "s"')
     numbers = numbers.split(' ')
@@ -54,3 +74,28 @@ def sumation(sum=0):
     return(sumation(sum))
     
 print(sumation())
+
+
+
+
+#6.Capital делает первую букву слова (введеного str) заглавной. 
+#CapitalSentance делает предложение (слова, введенные через пробел) заглавными. CapitalSentance использует Capital
+
+def Capital(aWord='qwerty'):
+    if len(aWord) < 2:
+        return(aWord.upper())
+    else:
+        separator = aWord[1]
+        aWord = aWord.split(aWord[1],1)
+        aWord[0]= aWord[0].upper()
+        Word = aWord[0]+separator+aWord[1]
+        return(Word)
+
+def CapitalSentance(aSentance = 'qwerty asdfg zxcv'):
+    aSentance = aSentance.split(' ')
+    theSentance = ''
+    for i in range(len(aSentance)):
+            theSentance = theSentance +' '+Capital(aSentance[i])
+    return(theSentance)
+    
+print(CapitalSentance('max vala paulina'))
