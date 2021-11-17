@@ -16,9 +16,28 @@ def returnTwoBigger (a,b,c):
         min =c
     return(a+b+c-min)
 
-
+№Возведение целого числа в целую отрицательную степень двумя способами
 print(division (1,10))
 print(division (1,0))
 #print ('{:.2f}'.format(division (1,)))
 userInfo('Максим','Кузнецов','25.06.1997','Львов','maksym.v.kuznetsov@gmail.com', '+380637290711')
 print(returnTwoBigger(1,2,3))
+
+def toThePowerOf_type1 (x,y):
+    if y>=0:
+        return ('y< - y should be int and < 0')
+    return (x**y)
+    
+def toThePowerOf_type2 (x,y):
+    if y>=0:
+        return ('y< - y should be int and < 0')
+    result = 1
+    y = -y
+    for i in range(y):
+        result = result/x
+    return(result)
+
+print(toThePowerOf_type1 (2,-3))
+print(toThePowerOf_type2 (2,-3))
+
+
