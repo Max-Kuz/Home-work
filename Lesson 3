@@ -16,7 +16,7 @@ def returnTwoBigger (a,b,c):
         min =c
     return(a+b+c-min)
 
-№Возведение целого числа в целую отрицательную степень двумя способами
+#Возведение целого числа в целую отрицательную степень двумя способами
 print(division (1,10))
 print(division (1,0))
 #print ('{:.2f}'.format(division (1,)))
@@ -40,4 +40,17 @@ def toThePowerOf_type2 (x,y):
 print(toThePowerOf_type1 (2,-3))
 print(toThePowerOf_type2 (2,-3))
 
-
+#Вводим числа через пробел. Программа выводит их сумму и снова запрашивает числа через пробел - они будут добавлены к уже имеющейся сумме. 
+#Чтоб остановится - нужно ввести "s" (так же через пробел
+#Реализация через рекурсию
+def sumation(sum=0):
+    numbers = input('Put numbers over spaces. To stop the programm - type "s"')
+    numbers = numbers.split(' ')
+    #print(numbers)
+    for i in range(len(numbers)):
+        if numbers[i] == 's':
+            return(sum)
+        sum = sum + int(numbers[i])
+    return(sumation(sum))
+    
+print(sumation())
