@@ -89,7 +89,7 @@ def Capital(aWord='qwrty'):
         aWord = cap+aWord[1:]
         return(aWord)
 
-def CapitalSentance(aSentance = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'):
+def CapitalSentance(aSentance = 'Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, \nsed do eiusmod tempor incididunt \nut labore et dolore magna aliqua'):
     aSentance = aSentance.split(' ')
     theSentance = ''
     for i in range(len(aSentance)):
