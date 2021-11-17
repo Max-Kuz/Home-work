@@ -1,0 +1,24 @@
+#Division of the 2 numbers with "error" message if div by 0
+def division (a,b):
+    if b != 0:
+        return (a/b)
+    else:
+        return ('стремится к бесконечности')
+#User name function
+def userInfo (name, surname, DOB, city, email, phone):
+    print ('Пользователь {} {} родился {} в городе {}. Его емейл: {}, его номер телефона: {}'.format(name, surname, DOB, city, email, phone))
+
+def returnTwoBigger (a,b,c):
+    min = a
+    if b<min:
+        min = b
+    elif c<min:
+        min =c
+    return(a+b+c-min)
+
+
+print(division (1,10))
+print(division (1,0))
+#print ('{:.2f}'.format(division (1,)))
+userInfo('Максим','Кузнецов','25.06.1997','Львов','maksym.v.kuznetsov@gmail.com', '+380637290711')
+print(returnTwoBigger(1,2,3))
