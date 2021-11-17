@@ -81,21 +81,19 @@ print(sumation())
 #6.Capital делает первую букву слова (введеного str) заглавной. 
 #CapitalSentance делает предложение (слова, введенные через пробел) заглавными. CapitalSentance использует Capital
 
-def Capital(aWord='qwerty'):
+def Capital(aWord='qwrty'):
     if len(aWord) < 2:
         return(aWord.upper())
     else:
-        separator = aWord[1]
-        aWord = aWord.split(aWord[1],1)
-        aWord[0]= aWord[0].upper()
-        Word = aWord[0]+separator+aWord[1]
-        return(Word)
+        cap = aWord[0].upper()
+        aWord = cap+aWord[1:]
+        return(aWord)
 
-def CapitalSentance(aSentance = 'qwerty asdfg zxcv'):
+def CapitalSentance(aSentance = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'):
     aSentance = aSentance.split(' ')
     theSentance = ''
     for i in range(len(aSentance)):
             theSentance = theSentance +' '+Capital(aSentance[i])
     return(theSentance)
     
-print(CapitalSentance('max vala paulina'))
+print(CapitalSentance())
