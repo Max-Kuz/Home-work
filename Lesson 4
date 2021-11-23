@@ -22,5 +22,15 @@ print (lisWork)
 print([el for el in range(20,241) if (el % 20 == 0)or(el % 21 ==0)])
 
 #4
+
+from random import randint
+mylist = [randint(1,10) for i in range(12)]
+print (mylist)
+thelist = list(set(mylist))
+i=0
+while True:
+    if print(mylist.count(thelist[i]))
+    break
+
 #5
 #6
