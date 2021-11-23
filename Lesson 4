@@ -1,4 +1,5 @@
 #1 З/п = з/п в час * часы работы + премия. Запускается через терминал
+
 from sys import argv
 name, mph,hh,pre = argv
 mph = int(mph)
@@ -17,9 +18,11 @@ print (lis)
 lisWork = [lis[i] for i in range(len(lis)-1) if lis[i+1]<lis[i]]
 print (lisWork)
 
+
 #3 Для чисел в пределах от 20 до 240 найти числа, кратные 20 или 21. Необходимо решить задание в одну строку.
 
 print([i for i in range(20,241) if (i % 20 == 0)or(i % 21 ==0)])
+
 
 #4 Генерируется список. Выводится список без повторений
 
@@ -29,9 +32,44 @@ print (mylist)
 thelist = [i for i in mylist if mylist.count(i)==1]
 print(thelist)
 
+
 #5 Находим произведение всех чисул от 100 до 1000 и выводим. Запаковал все сразу в print. Использовал reduce, lambda, generator
 
 from functools import reduce
 print('{:}'.format(reduce(lambda a,b:a*b,(i for i in range(100,1001,2)))))
 
-#6
+
+#6 С использованием itertools.count и itertools.cycle создаем списки. Условие прекращения через счетчик.
+# Сделал без использования break)) Наверное вы имели ввиду "bread или return"
+
+from itertools import count, cycle
+
+def iterCount(lis = [], c = 0):
+    for i in count(3):
+        lis.append(i)
+        c+=1
+        if c ==18:
+            return (lis)
+
+def iterCycle(lis = [], c = 0):
+    for i in cycle('qwerty'):
+        lis.append(i)
+        c+=1
+        if c ==18:
+            return (lis)
+        
+print(iterCycle())
+print(iterCount())
+
+
+#7 Факториал через yield. Интуиция подсказывает, что есть коды красивее - посмотрю на разборе)
+
+def fact(n,total=1):
+    for i in range(1,n+1):
+        total = total*i
+        yield (total)
+
+print(*fact(10),'\n')
+
+for i in fact(3):
+    print(i)
