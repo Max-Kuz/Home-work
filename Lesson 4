@@ -33,7 +33,7 @@ thelist = [i for i in mylist if mylist.count(i)==1]
 print(thelist)
 
 
-#5 Находим произведение всех чисул от 100 до 1000 и выводим. Запаковал все сразу в print. Использовал reduce, lambda, generator
+#5 Находим произведение всех чисел от 100 до 1000 и выводим. Запаковал все сразу в print. Использовал reduce, lambda, generator
 
 from functools import reduce
 print('{:}'.format(reduce(lambda a,b:a*b,(i for i in range(100,1001,2)))))
