@@ -1,36 +1,37 @@
 #1 З/п = з/п в час * часы работы + премия. Запускается через терминал
-print ('Суммарный заработок составит {} рублей'.format(int(input('Введите з/п в час: '))*int(input('Введите кол-во отработаных часов: '))+int(input('Введите размер премии: '))))
+from sys import argv
+name, mph,hh,pre = argv
+mph = int(mph)
+hh = int(hh)
+pre = int(pre)
+print ('Суммарный заработок составит {} рублей'.format(mph*hh+pre))
 
-#2 Генерирует список случайной длины, состоящи из случайных целых чисел, и выводит
+
+#2 Генерирует список случайной длины, состоящи из случайных целых чисел, и выводит их
 # Выводим числа из предыдущего списка, который бОльшие предыдущего
 
-import random
-length = random.randint(10,20)
-lis = []
-for i in range(length):
-    lis.append (random.randrange(1,100,3))
+from random import randint
+lis = [randint(1,10) for i in range(randint(10,15))]
 print (lis)
 
-lisWork = []
-for i in range(length-1):
-    if lis[i+1]<lis[i]:
-        lisWork.append(lis[i])
+lisWork = [lis[i] for i in range(len(lis)-1) if lis[i+1]<lis[i]]
 print (lisWork)
 
 #3 Для чисел в пределах от 20 до 240 найти числа, кратные 20 или 21. Необходимо решить задание в одну строку.
 
-print([el for el in range(20,241) if (el % 20 == 0)or(el % 21 ==0)])
+print([i for i in range(20,241) if (i % 20 == 0)or(i % 21 ==0)])
 
-#4
+#4 Генерируется список. Выводится список без повторений
 
 from random import randint
-mylist = [randint(1,10) for i in range(12)]
+mylist = [randint(1,10) for i in range(15)]
 print (mylist)
-thelist = list(set(mylist))
-i=0
-while True:
-    if print(mylist.count(thelist[i]))
-    break
+thelist = [i for i in mylist if mylist.count(i)==1]
+print(thelist)
 
-#5
+#5 Находим произведение всех чисул от 100 до 1000 и выводим. Запаковал все сразу в print. Использовал reduce, lambda, generator
+
+from functools import reduce
+print('{:}'.format(reduce(lambda a,b:a*b,(i for i in range(100,1001,2)))))
+
 #6
